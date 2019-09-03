@@ -1,7 +1,38 @@
 'use strict'
+/* 
+PSEUDOCODE
 
-var testArrayGenap = [40, 18, 22, 32, 90, 10, 10, 22, 8]
-var testArrayGanjil = [3, 31, 89, 53, 53, 85, 77, 21, 55]
+DEF ownSort with parameter arr
+  FOR i = 0 and i < length of array, i increment by 1, THEN
+    FOR j = i and j>= 0, j decrease by 1, THEN
+      IF value of arr with index of next number of j < value of arr with index of j, THEN
+        SET temp with value of arr with index j
+        SET value of arr with index j to value of arr with index of next number of j
+        SET value of arr with index of next number of j with temp
+      ENDIF
+    ENDFOR
+  ENDFOR
+  RETURN arr as result
+
+DEF binarySearch with parameter search and array
+  SET high as number with value length of array minus 1
+  SET low as number with value 0
+  WHILE low less than or equal to high,THEN
+    SET mid as number with value sum of low and high and divided by two
+    mid will be rounded to smallest decimal place
+    IF value of array with index of mid equal to search,THEN
+      RETURN mid as result
+    ELSE IF search < value of array with index of mid,THEN
+      high equal mid - 1;
+    ELSE
+      low = mid + 1;
+    ENDIF
+  ENDLOOP
+  RETURN -1 as result
+*/
+
+var testArrayGenap = [40, 18, 22, 32, 90, 10, 10, 22, 8];
+var testArrayGanjil = [3, 31, 89, 53, 53, 85, 77, 21, 55];
 
 function ownSort(arr) {
   for (var i = 0; i<arr.length;i++){
@@ -43,7 +74,7 @@ console.log(binarySearch(33, arrayGenapSorted))
 
 console.log(binarySearch(53, arrayGanjilSorted))
 console.log(binarySearch(3, arrayGanjilSorted))
-console.log(binarySearch(2, arrayGanjilSorted))
+console.log(binarySearch(51, arrayGanjilSorted))
 
 module.exports = {
   binarySearch
