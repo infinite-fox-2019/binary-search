@@ -48,13 +48,13 @@ var arrayGenapSorted = ownSort(testArrayGenap)
 var arrayGanjilSorted = ownSort(testArrayGanjil)
 
 // Driver code
-console.log(binary_search(8, arrayGenapSorted))
-console.log(binary_search(10, arrayGenapSorted))
-console.log(binary_search(33, arrayGenapSorted))
+console.log(binary_search(8, arrayGenapSorted) === 0)
+console.log(binary_search(10, arrayGenapSorted) === 1)
+console.log(binary_search(33, arrayGenapSorted) === -1)
 
-console.log(binary_search(53, arrayGanjilSorted))
-console.log(binary_search(3, arrayGanjilSorted))
-console.log(binary_search(2, arrayGanjilSorted))
+console.log(binary_search(53, arrayGanjilSorted) === 3)
+console.log(binary_search(3, arrayGanjilSorted) === 0)
+console.log(binary_search(2, arrayGanjilSorted) === -1)
 
 module.exports = {
   binary_search
