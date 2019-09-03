@@ -5,7 +5,7 @@
 // STORE nilaiTertinggi to array of length -1
 // WHILE nilaiRendah less than nilaiTertinggi
 // STORE nilaiTengah nilaiRendah add nilaiTertinggi divide 2
-// IF array to mid equals to search
+// IF array to nilaiTengah equals to search
 // DISPLAY nilaiTengah
 // ELSE IF  array to nilaiTengah less than search
 // nilaiRendah equals to nilaiTengah add 1
@@ -35,16 +35,16 @@ function binary_search (search, array) {
   // Your searching 
   console.log(array);
   // binary
-  let low = 0
-  let high = array.length -1
-  while( low <= high ){
-    let mid = Math.floor((low + high)/2)
-    if(array[mid] == search){
-      return mid
-    } else if (array[mid] < search){
-      low = mid + 1
+  let nilaiRendah = 0
+  let nilaiTertinggi = array.length -1
+  while( nilaiRendah <= nilaiTertinggi ){
+    let nilaiTengah = Math.floor((nilaiRendah + nilaiTertinggi)/2)
+    if(array[nilaiTengah] == search){
+      return nilaiTengah
+    } else if (array[nilaiTengah] < search){
+      nilaiRendah = nilaiTengah + 1
     } else {
-      high = mid - 1
+      nilaiTertinggi = nilaiTengah - 1
     }
   }
   return -1
