@@ -27,18 +27,16 @@ function binary_search (search, array) {
   // Your searching code
     var i = 0
     var j = array.length
-    var tengah = Math.floor(j/2)
     for(var k = 0 ; k<array.length ; k++){
+        var tengah = Math.floor((j+i)/2)
         if(search == array[tengah]){
             return tengah
         }
         else if(search < array[tengah]){
             j = tengah
-            tengah = Math.floor(j/2)
         }
         else if(search > array[tengah]){
             i = tengah
-            tengah = Math.ceil((j-i)/2)+i
         }
     }
     return -1
