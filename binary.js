@@ -38,7 +38,6 @@ function binary_search (search, arr) {
 var arrayGenapSorted = ownSort(testArrayGenap)
 var arrayGanjilSorted = ownSort(testArrayGanjil)
 
-
 // Driver code
 console.log(binary_search(8, arrayGenapSorted))
 console.log(binary_search(10, arrayGenapSorted))
@@ -51,3 +50,23 @@ console.log(binary_search(2, arrayGanjilSorted))
 module.exports = {
   binary_search
 }
+
+// PSEUDOCODE
+// SORT all array/data from small to big
+// STORE data with array
+// STORE search with value want to search
+// STORE low with 0
+// STORE high with last index of array
+// WHILE low <= high
+//  STORE mid with CALCULATE (low add high) divide 2
+//   IF mid equals to search THEN
+//    RETURN mid
+//  ELSE IF mid < search THEN
+//    SET low with mid add 1
+//  ELSE
+//    SET high with mide minus 1
+//  END IF
+// END WHILE
+// IF dont math with all data THEN
+//  RETURN -1
+// END IF
