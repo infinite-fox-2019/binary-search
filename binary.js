@@ -1,16 +1,50 @@
 'use strict'
 
 var testArrayGenap = [40, 18, 22, 32, 90, 10, 10, 22, 8]
-var testArrayGanjil = [3, 31, 89, 53, 53, 85, 77, 21, 55]
+var testArrayGanjil = [31, 3, 89, 53, 53, 85, 77, 21, 55]
+
+//harus sort dg insertion
 
 function ownSort(arr) {
-  // Your sorting code
+ 
+  for (var i=0; i<arr.length; i++) {
+    var temp = arr[i+1] 
+    console.log(arr);
+    for (var j=i; j>=0; j--) {
+      if (temp < arr[j]) {
+        arr[j+1] = arr[j]
+        if (temp >= arr[j-1] || arr[j-1] == undefined){
+          arr[j] = temp 
+          break
+        }
+      }
+      
+    }
+  }
+  console.log(arr);
+  
   return arr
 }
 
-function binarySearch (search, array) {
-  // Your searching code
-  return 0;
+function binary_search (search, array) {
+  var L = 0
+  var R = array.length-1
+  
+  for (var i=L; i<array.length; i++) {
+    var m = Math.floor((R+L)/2)
+    if (array[m] === search) {
+      return m
+      
+    }
+    else if (search > array[m]) {
+        L = m
+    }
+    else if (search < array[m]) {
+      R = m
+    }
+
+  }
+  return -1
 }
 
 var arrayGenapSorted = ownSort(testArrayGenap)
