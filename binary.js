@@ -6,12 +6,14 @@ var testArrayGanjil = [3, 31, 89, 53, 53, 85, 77, 21, 55]
 function ownSort(arr) {
   for(var i = 1; i < arr.length; i++) {
     var currentElement = arr[i];
+    var insertedIndex = i;
     for(var j = i - 1; j >= 0; j--) {
       if(arr[j] > currentElement) {
         arr[j + 1] = arr[j];
-        arr[j] = currentElement;
+        insertedIndex = j;
       }
     }
+    arr[insertedIndex] = currentElement;
   }
       
   return arr;
