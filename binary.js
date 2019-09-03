@@ -22,7 +22,7 @@ function binary_search (search, array) {
   var min = 0
   var max = array.length;
 
-  for(var i = 0; i < array.length; i++){
+  for(var i= 0; i<array.length; i++){
     var med = Math.floor((min+max)/2)
     if (search == array[med]){
       return med
