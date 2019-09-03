@@ -38,7 +38,7 @@ function ownSort(arr) {
   return arr
 }
 
-function binarySearch (search, array) {
+function binary_search (search, array) {
   const sort = ownSort(array)
   let lowest = 0
   let highest = array.length - 1
@@ -61,14 +61,14 @@ var arrayGenapSorted = ownSort(testArrayGenap)
 var arrayGanjilSorted = ownSort(testArrayGanjil)
 
 // Driver code
-console.log(binarySearch(8, arrayGenapSorted))
-console.log(binarySearch(10, arrayGenapSorted))
-console.log(binarySearch(33, arrayGenapSorted))
+console.log(binary_search(8, arrayGenapSorted))
+console.log(binary_search(10, arrayGenapSorted))
+console.log(binary_search(33, arrayGenapSorted))
 
-console.log(binarySearch(53, arrayGanjilSorted))
-console.log(binarySearch(3, arrayGanjilSorted))
-console.log(binarySearch(2, arrayGanjilSorted))
+console.log(binary_search(53, arrayGanjilSorted))
+console.log(binary_search(3, arrayGanjilSorted))
+console.log(binary_search(2, arrayGanjilSorted))
 
 module.exports = {
-  binarySearch
+  binary_search
 }
