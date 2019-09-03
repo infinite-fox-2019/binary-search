@@ -21,18 +21,15 @@ function ownSort(arr) {
 function binary_search (search, array) {
   var min = 0
   var max = array.length;
-  var med = Math.floor((max+min)/2)
 
-  var min = 0
-  var max = array.length
   for(var i = 0; i < array.length; i++){
     var med = Math.floor((min+max)/2)
     if (search == array[med]){
       return med
     }else if (search<array[med]){
-      max = med 
+      max = med - 1
     }else {
-      min = med
+      min = med + 1
     }
   }
  return -1
@@ -41,6 +38,7 @@ function binary_search (search, array) {
 
 var arrayGenapSorted = ownSort(testArrayGenap)
 var arrayGanjilSorted = ownSort(testArrayGanjil)
+
 console.log('ganjil ' + arrayGanjilSorted, 'genap ' + arrayGenapSorted)
 // // Driver code
 console.log(binary_search(8, arrayGenapSorted))
