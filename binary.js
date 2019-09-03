@@ -12,9 +12,9 @@ function ownSort(arr) {
         arr[i]=temp 
         i=j
       }
-    }
+    } 
   }
-  return arr;
+  return arr; 
 }
 
 function binary_search (search, array) {
@@ -32,12 +32,12 @@ function binary_search (search, array) {
     } else if (search < array[tengah]){
       min = 0
       max = tengah
-      var tengah = Math.floor((max-min)/2)
+      tengah = Math.floor((max-min)/2)
       continue loop1;
     } else if (search > array[tengah]){
       min = tengah
       max = array.length-1
-      var tengah = tengah + Math.floor((max-min)/2)
+      tengah = tengah + Math.floor((max-min)/2)
       continue loop1;
     }
   }
@@ -59,3 +59,34 @@ console.log(binary_search(2, arrayGanjilSorted) === -1)
 module.exports = {
   binary_search
 }
+
+/*
+PSEUDOCODE BINARY SEARCH
+STORE function binary_search with 'search' and 'array' as an input
+STORE 'min' with 0
+STORE 'max' with length of 'array' minus 1
+STORE 'tengah' with rounded value of 'max' minus 'min' DIV by 2
+STORE loop1 as label for following for loop
+FOR i equals to 'min' WHILE i less than 'max' AND i plus 1
+  IF 'search' equals to 'array' with 'tengah' as an index THEN
+    RETURN function with 'tengah' minus 1
+  ELSE IF 'search' equals to array with 'min' as an index
+    RETURN function with 'min'
+  ELSE IF 'search' equals to array with 'max' as an index
+    RETURN function with 'max'
+  ELSE IF 'search' less than array with 'tengah' as an index
+    SET 'min' with 0
+    SET 'max' with 'tengah'
+    SET 'tengah' with rounded value of 'max' minus 'min' DIV by 2
+    CONTINUE to loop1
+  ELSE IF 'search' more than array with 'tengah' as an index
+    SET 'min' with 'tengah'
+    SET 'max' with length of array minus 1
+    SET 'tengah' with 'tengah' plus rounded value of 'max' minus 'min' DIV by 2
+    CONTINUE to loop1;
+  END IF
+END FOR
+RETURN function with -1
+END FUNCTION
+
+*/
