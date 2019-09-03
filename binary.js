@@ -5,20 +5,39 @@ var testArrayGanjil = [3, 31, 89, 53, 53, 85, 77, 21, 55]
 
 function ownSort(arr) {
   // Your sorting code
-  for (var i = 1; i < arr.length; i++) {
-    var holdNumber = arr[i];
-    for (var j = i-1; j >= 0; j--) {
-      if (arr[j] > holdNumber) {
-        var tukar = arr[j];
-        arr[j] = arr[j+1];
-        arr[j+1] = tukar;
-      } else {
-        break;
-      }
+  for (var i = 0; i < arr.length-1; i++) {
+    var holdNumber = arr[i+1];
+    for (var j = i; j >= 0; j--) {
+        if (arr[j] > holdNumber) {
+            arr[j+1] = arr[j]
+            if (holdNumber >= arr[j-1] || arr[j-1] == undefined) {
+                arr[j] = holdNumber;
+                break;
+            }
+        }
     }
   }
   return arr
 }
+
+/*
+PSEUDOCODE
+  STORE search with any number
+  STORE array with array of number
+  STORE batasBawah with 0
+  STORE batasAtas with length of array minus by 1
+  WHILE batasBawah LESS THAN OR EQUALS TO batasAtas
+    STORE tengah with (CALCULATE batasAtas + batasBawah divide by 2)
+    IF search EQUALS TO array[tengah] THEN
+      DISPLAY tengah
+    ELSE IF search GREATER THAN array[tengah] THEN
+      SET batasBawah with tengah add by 1
+    ELSE
+      SET batasAtas with tengah minus by 1
+  ENDWHILE
+  DISPLAY -1
+
+*/
 
 function binary_search (search, array) {
   // Your searching code
@@ -41,10 +60,12 @@ var arrayGenapSorted = ownSort(testArrayGenap)
 var arrayGanjilSorted = ownSort(testArrayGanjil)
 
 // Driver code
+console.log(arrayGenapSorted);
 console.log(binary_search(8, arrayGenapSorted))
 console.log(binary_search(10, arrayGenapSorted))
 console.log(binary_search(33, arrayGenapSorted))
 
+console.log(arrayGanjilSorted);
 console.log(binary_search(53, arrayGanjilSorted))
 console.log(binary_search(3, arrayGanjilSorted))
 console.log(binary_search(2, arrayGanjilSorted))
