@@ -30,6 +30,7 @@ while(start is less than or equal to end)
   else if search is more than the value in array index mid
     start equals to mid + 1
 ENDWHILE
+return -1
 */
 
 function binary_search (search, array) {
@@ -48,6 +49,7 @@ function binary_search (search, array) {
     }
 
   }
+  return -1
 
   // notes:
   // find the end of the array
@@ -59,6 +61,7 @@ function binary_search (search, array) {
   // the endindex becomes mid -1
   // if search is more than mid array
   // the the startindex becomes mid + 1
+  // return -1 outside of loop
 
 }
 
