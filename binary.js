@@ -5,21 +5,18 @@ var testArrayGanjil = [3, 31, 89, 53, 53, 85, 77, 21, 55]
 
 function ownSort(arr) {
   // Your sorting code
-  for(var i = 0 ; i<arr.length ; i++){
-    var penampung = 0
-    var j = i
-    while(j>=0){
-        if (arr[j+1] < arr[j]){
-            penampung = arr[j]
-            arr[j] = arr[j+1]
-            arr[j+1] = penampung
-            j--
-        }
-        else{
-            break
-        }
+  for(var i = 0 ; i<arr.length-1 ; i++){
+    var penampung = arr[i+1]
+    for(var j = i ; j>=0; j--){
+        if (penampung < arr[j]){
+            arr[j+1] = arr[j]
+            if (penampung >= arr[j-1] || arr[j-1] == undefined){
+                arr[j] = penampung
+                break
+            }
+        }        
     }
-  }
+}
   return arr
 }
 
@@ -42,8 +39,34 @@ function binary_search (search, array) {
     return -1
 }
 
+/*
+PSEUDOCODE
+
+    FUNCTION name 'binary_search' with parameters 'search', 'array'
+        STORE 'i' with 0
+        STORE 'j' with length of 'array'
+        STORE 'k' with 0
+        STORE 'tengah' with any number value
+        FOR 'k' less than length of 'array' DO
+            SET 'tengah' with rounding off (('j' PLUS 'i') DIV by 2)
+            IF 'search' equals to 'array' index 'tengah' DO
+                RETURN 'tengah'
+            ELSE IF 'search' less than 'array' index 'tengah' DO
+                SET 'j' with 'tengah'
+            ELSE IF 'search' greater than 'array' index 'tengah' DO
+                SET 'i' with 'tengah'
+            END IF
+        END FOR
+        RETURN -1
+    END FUNCTION
+    
+*/
+
 var arrayGenapSorted = ownSort(testArrayGenap)
 var arrayGanjilSorted = ownSort(testArrayGanjil)
+
+console.log(arrayGenapSorted);
+console.log(arrayGanjilSorted);
 
 // Driver code
 console.log(binary_search(8, arrayGenapSorted))
@@ -57,6 +80,3 @@ console.log(binary_search(2, arrayGanjilSorted))
 module.exports = {
   binary_search
 }
-
-console.log(arrayGenapSorted);
-console.log(arrayGanjilSorted);
