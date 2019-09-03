@@ -25,7 +25,7 @@ function binary_search (search, array) {
   var awal = 0;
   var akhir = array.length-1;
 
-  for(var i = 0; i<1; i--){
+  while(!(awal == akhir || awal == tengah || akhir == tengah)){
   var tengah = Math.floor((akhir + awal) / 2);
     if(array[awal] == search || array[akhir] == search || array[tengah] == search){
       if(array[awal] == search){
@@ -41,10 +41,6 @@ function binary_search (search, array) {
     }
     else{
       awal = tengah + 1;
-    }
-
-    if(awal == akhir || awal == tengah || akhir == tengah){
-      return -1;
     }
   }
   return -1;
