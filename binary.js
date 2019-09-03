@@ -1,3 +1,22 @@
+/*
+PSEUDOCODE BINARY SEARCH
+
+DECLARE Function binarySearch with parameter (sortedArray, element)
+LET var min equals to 0
+LET var max equals to length of sortedArray
+LOOP FOR initiate i start with 0 until i less than length of sortedArray,  DO
+    LET med equals to integer min plus max devide by 2
+    IF element equals to element sortedArray with index med DO
+        RETURN value to med; 
+    ELSE IF element less than element of sortedArray with index med DO
+        max equals to  med minus 1
+    ELSE IF element equals to element of sortedArray with index med DO
+        min equals to med plus 1
+    END IF
+END FOR
+RETURN value to -1 (if element searched doesnt exist in sortedArray)
+*/
+
 'use strict'
 
 var testArrayGenap = [40, 18, 22, 32, 90, 10, 10, 22, 8]
